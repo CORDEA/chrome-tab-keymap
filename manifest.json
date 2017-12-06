@@ -1,0 +1,41 @@
+{
+    "name": "Chrome tab keymap",
+    "version": "0.0.1",
+    "description": "Chrome tab keymap",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js":      ["content.js"],
+        "run_at": "document_idle"
+    }],
+    "commands": {
+        "move-left": {
+            "suggested_key": {
+                "default": "Ctrl+H"
+            },
+            "description": "Move to left"
+        },
+        "move-right": {
+            "suggested_key": {
+                "default": "Ctrl+L"
+            },
+            "description": "Move to right"
+        },
+        "close": {
+            "suggested_key": {
+                "default": "Ctrl+D"
+            },
+            "description": "Close tab"
+        }
+    },
+        "permissions" : [
+            "tabs",
+            "<all_urls>"
+        ],
+        "manifest_version": 2
+    }
